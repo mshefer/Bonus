@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
-  _connectivityRadius: 20
+  _connectivityRadius: 21
 --- !u!1 &494820345
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,9 +489,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a66a3609056a04ab683ea5250af477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patrolWaiting: 1
+  _patrolWaiting: 0
   _totalWaitTime: 3
-  _switchProabability: 0.2
+  _switchProbability: 0.2
 --- !u!195 &531839393
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
-  _connectivityRadius: 20
+  _connectivityRadius: 21
 --- !u!1 &1151370280
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
-  _connectivityRadius: 20
+  _connectivityRadius: 21
 --- !u!1 &1281632573
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
-  _connectivityRadius: 20
+  _connectivityRadius: 21
 --- !u!1 &1309701807
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
-  _connectivityRadius: 20
+  _connectivityRadius: 21
 --- !u!1 &1558601600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
-  _connectivityRadius: 20
+  _connectivityRadius: 21
 --- !u!1 &1871411463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
-  _connectivityRadius: 20
+  _connectivityRadius: 21
 --- !u!1 &1965255690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
-  _connectivityRadius: 20
+  _connectivityRadius: 21
 --- !u!1 &1989024526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
-  _connectivityRadius: 20
+  _connectivityRadius: 21
 --- !u!1 &1996342083
 GameObject:
   m_ObjectHideFlags: 0

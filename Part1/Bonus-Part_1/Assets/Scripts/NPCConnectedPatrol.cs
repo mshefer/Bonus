@@ -1,11 +1,10 @@
-﻿
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEngine.AI;
-using System;
-using System.Text;
-using System.Linq;
-
+ 
 namespace Assets.Code
 {
     public class NPCConnectedPatrol : MonoBehaviour
@@ -17,8 +16,9 @@ namespace Assets.Code
         [SerializeField]
         float _totalWaitTime = 3f;
 
+
         [SerializeField]
-        float _switchProabability = 0.2f;
+        float _switchProbability = 0.2f;
 
         NavMeshAgent _navMeshAgent;
         ConnectedWaypoint _currentWaypoint;
@@ -37,11 +37,11 @@ namespace Assets.Code
             {
                 Debug.LogError("The nav mesh agent component is not attached to " + gameObject.name);
             }
-
             else
             {
                 if (_currentWaypoint == null)
                 {
+
                     GameObject[] allWaypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
                     if (allWaypoints.Length > 0)
@@ -50,6 +50,7 @@ namespace Assets.Code
                         {
                             int random = UnityEngine.Random.Range(0, allWaypoints.Length);
                             ConnectedWaypoint startingWaypoint = allWaypoints[random].GetComponent<ConnectedWaypoint>();
+
 
                             if (startingWaypoint != null)
                             {
@@ -74,26 +75,34 @@ namespace Assets.Code
             {
                 _travelling = false;
                 _waypointsVisited++;
-            }
-            else
-            {
-                SetDestination();
+
+                if (_patrolWaiting)
+                {
+                    _waiting = true;
+                    _waitTimer = 0f;
+                }
+                else
+                {
+                    SetDestination();
+                }
             }
 
+         
             if (_waiting)
             {
                 _waitTimer += Time.deltaTime;
                 if (_waitTimer >= _totalWaitTime)
                 {
                     _waiting = false;
+
                     SetDestination();
                 }
             }
         }
 
-       private void SetDestination()
+        private void SetDestination()
         {
-            if (_waypointsVisited >0)
+            if (_waypointsVisited > 0)
             {
                 ConnectedWaypoint nextWaypoint = _currentWaypoint.NextWaypoint(_previousWaypoint);
                 _previousWaypoint = _currentWaypoint;

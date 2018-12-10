@@ -8,23 +8,25 @@ namespace Assets.Code
 {
     public class ConnectedWaypoint : Waypoint
     {
-
         [SerializeField]
         protected float _connectivityRadius = 50f;
-        
+
         List<ConnectedWaypoint> _connections;
 
         public void Start()
         {
+      
             GameObject[] allWaypoints = GameObject.FindGameObjectsWithTag("Waypoint");
+
+     
             _connections = new List<ConnectedWaypoint>();
-            for(int i = 0; i < allWaypoints.Length; i++)
+            for (int i = 0; i < allWaypoints.Length; i++)
             {
                 ConnectedWaypoint nextWaypoint = allWaypoints[i].GetComponent<ConnectedWaypoint>();
 
-                if(nextWaypoint != null)
+                if (nextWaypoint != null)
                 {
-                    if(Vector3.Distance(this.transform.position, nextWaypoint.transform.position) <= _connectivityRadius && nextWaypoint != this)
+                    if (Vector3.Distance(this.transform.position, nextWaypoint.transform.position) <= _connectivityRadius && nextWaypoint != this)
                     {
                         _connections.Add(nextWaypoint);
                     }
@@ -43,16 +45,16 @@ namespace Assets.Code
 
         public ConnectedWaypoint NextWaypoint(ConnectedWaypoint previousWaypoint)
         {
-            if(_connections.Count==0)
-            {
-                Debug.LogError("Insufficient waypoint count.");
+            if (_connections.Count == 0)
+            {             Debug.LogError("Insufficient waypoint count.");
                 return null;
             }
             else if (_connections.Count == 1 && _connections.Contains(previousWaypoint))
             {
+
                 return previousWaypoint;
             }
-            else
+            else 
             {
                 ConnectedWaypoint nextWaypoint;
                 int nextIndex = 0;
@@ -61,11 +63,11 @@ namespace Assets.Code
                 {
                     nextIndex = UnityEngine.Random.Range(0, _connections.Count);
                     nextWaypoint = _connections[nextIndex];
+
                 } while (nextWaypoint == previousWaypoint);
 
                 return nextWaypoint;
             }
         }
-
     }
 }
